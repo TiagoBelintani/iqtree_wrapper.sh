@@ -11,7 +11,7 @@ Copy code
 bash script_name.sh input_directory output_directory
 Arguments:
 
-input_directory: The directory containing input protein sequence files in FASTA format.
+input_directory: The directory containing input protein sequence files in FASTA format (extension .fa).
 output_directory: The directory where IQ-TREE results will be saved.
 How to Use:
 
@@ -25,6 +25,9 @@ Copy code
 
 bash iqtree_wrapper.sh /path/to/input_sequences /path/to/output_results
 
+input = *.fa 
+to use for *.fasta or *phy change the script
+
 Script Functionality:
 
 Checks if the correct number of arguments (input and output directories) is provided. If not, it displays a usage message and exits.
@@ -34,3 +37,13 @@ Iterates over all .fa files in the input directory.
 For each file, executes IQ-TREE with specified parameters, including the number of threads and bootstrap replicates.
 Saves the resulting phylogenetic tree files with a prefix in the specified output directory.
 This script streamlines the process of running IQ-TREE on multiple protein sequence files, allowing for efficient and organized tree construction for phylogenetic analysis.
+
+Dependeces: Iqtree
+
+conda create --name iqtree_env
+conda activate iqtree_env
+conda install bioconda::iqtree
+
+
+
+
